@@ -1,4 +1,6 @@
 
+import static org.junit.Assert.*;
+import org.junit.*;
 
 public class ArrayTests {
 	@Test 
@@ -23,16 +25,16 @@ public class ArrayTests {
 
 
   @Test
-  public void testReversed() {
-    int[] input1 = { };
-    assertArrayEquals(new int[]{ }, ArrayExamples.reversed(input1));
+  public void testReversedNonFail() {
+    int[] input1 = {0,0,0};
+    assertArrayEquals(new int[]{0,0,0}, ArrayExamples.reversed(input1));
   }
 
   // My test case
   // BUG: assigns values of the new array to the old one instead of vice-versa
   // This way, the returned array will always be empty?
   @Test
-  public void testReversed2() {
+  public void testReversedFail() {
     int[] input2 = {1,2,3,4,5};
     assertArrayEquals(new int[] {5,4,3,2,1}, ArrayExamples.reversed(input2));
   }
